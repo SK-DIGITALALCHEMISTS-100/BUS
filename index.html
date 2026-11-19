@@ -545,6 +545,19 @@ $("file").onchange = function(e){
   r.onload = function(){ $("img").src = r.result; };
   r.readAsDataURL(f);
 };
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./sw.js")
+      .then(function (registration) {
+        console.log("Chennai One PWA registered:", registration.scope);
+      })
+      .catch(function (error) {
+        console.error("PWA registration failed:", error);
+      });
+  });
+}
 </script>
+
 </body>
 </html>

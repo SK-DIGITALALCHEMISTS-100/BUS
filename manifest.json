@@ -1,9 +1,27 @@
+
 {
+  "id": "./",
   "name": "Chennai One",
   "short_name": "Chennai One",
+  "description": "Chennai One Mobile Application",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
-  "orientation": "portrait"
+  "background_color": "#0B0B0D",
+  "theme_color": "#0B0B0D",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
 }
