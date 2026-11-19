@@ -225,6 +225,28 @@ button:active{transform:scale(.94)}
   justify-content:center;
 }
 
+#splash-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+
+#splash-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#splash-screen.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .hist{background:var(--surface);border-radius:14px;padding:14px;margin-bottom:10px;font-size:14px;display:flex;justify-content:space-between}
 .muted{color:var(--muted);font-size:13px}
 .demo{background:#3a2d0f;color:#ffd77a;font-size:12px;text-align:center;padding:6px}
@@ -247,6 +269,11 @@ button:active{transform:scale(.94)}
     </div>
   </div>
   
+<div id="splash-screen">
+    <img src="assets/splash-screen.png"
+         alt="Chennai One">
+</div>
+
   <div class="chip">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1d1d22" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16M8 21v-4M16 21v-4"/></svg>
     Bus(1/1)
@@ -545,6 +572,23 @@ $("file").onchange = function(e){
   r.onload = function(){ $("img").src = r.result; };
   r.readAsDataURL(f);
 };
+
+window.addEventListener("load", function () {
+
+    setTimeout(function () {
+
+        const splash = document.getElementById("splash-screen");
+
+        splash.classList.add("hide");
+
+        setTimeout(function () {
+            splash.remove();
+        }, 500);
+
+    }, 2500);
+
+});
+
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
