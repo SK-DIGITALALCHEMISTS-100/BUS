@@ -1,0 +1,9 @@
+{
+  "name": "Chennai One",
+  "short_name": "Chennai One",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait"
+}
